@@ -84,6 +84,20 @@
         getUrlVar: (name) ->
           $.getUrlVars()[name]
 
+      callback = (response) ->
+        $(ul).empty
+        $(response).each (index, result) ->
+            console.log(result)
+            $(ul).append("""
+                <li>
+                <div class="commit-author-info">
+                    <img class="commit-avatar" src="#{result.author.avatar_url}"> <a href="https://github.com/#{result.author.login}"><b class="commit-author">#{result.author.login}</b></a>
+                    <b class="commit-date">#{$.timeago(result.commit.committer.date)}</b><br /><i class="commit-sha">SHA: #{result.sha}</i>
+                </div>
+                <a class="commit-message" href="https://github.com/#{username}/#{repo}/commit/#{result.sha}" target="_blank">#{result.commit.message}</a>
+                </li>
+            """)
+
       $ ->
         params = $.getUrlVars()
         # config parameters
@@ -96,20 +110,6 @@
         limit = 10 # limits the number of results
         
         container.find('h3').text("Latest Commits to #{username}/#{repo}")
-
-        callback = (response) ->
-          $(ul).empty
-          $(response).each (index, result) ->
-              console.log(result)
-              $(ul).append("""
-                  <li>
-                  <div class="commit-author-info">
-                      <img class="commit-avatar" src="#{result.author.avatar_url}"> <a href="https://github.com/#{result.author.login}"><b class="commit-author">#{result.author.login}</b></a>
-                      <b class="commit-date">#{$.timeago(result.commit.committer.date)}</b><br /><i class="commit-sha">SHA: #{result.sha}</i>
-                  </div>
-                  <a class="commit-message" href="https://github.com/#{username}/#{repo}/commit/#{result.sha}" target="_blank">#{result.commit.message}</a>
-                  </li>
-              """)
 
         $.getJSON("https://api.github.com/repos/#{username}/#{repo}/commits?limit=#{limit}&callback=callback")
     </script>
