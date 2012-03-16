@@ -4,6 +4,20 @@
     <script src="./jquery.timeago.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/coffee-script/1.2.0/coffee-script.min.js"></script>
     <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .gh-ico {
+        width: 22px;
+        height: 22px;
+        margin-right: 4px;
+        vertical-align: top;
+        background: url(github-icons.png) no-repeat 0 0;
+        opacity: .65;
+        background-position: 0 -20px;
+        display: inline-block;
+      }
       #latest-commits-widget{
         border:1px solid #cacaca;
         width:500px;
@@ -17,7 +31,7 @@
       #latest-commits-widget a:hover{
         text-decoration:underline
       }
-      #latest-commits-widget h3{
+      #latest-commits-header{
         background-color:#e1e1e1;
         background-image:-moz-linear-gradient(top, #f1f1f1, #e1e1e1);
         background-image:-ms-linear-gradient(top, #f1f1f1, #e1e1e1);
@@ -34,6 +48,11 @@
         text-shadow:1px 0 1px rgba(255, 255, 255, .7);
         font-size:1.3em;
         font-weight:bold
+      }
+      #latest-commits-header h4 {
+        margin: 0;
+        padding: .25em 0 0 0;
+        display: inline-block;
       }
       #latest-commits-widget ul#commit-history{
         overflow-y:auto;
@@ -67,7 +86,10 @@
   </head>
   <body>
     <div id="latest-commits-widget">
-        <h3>Latest Commits</h3>
+        <div id="latest-commits-header">
+          <div class="gh-ico"></div>
+          <h4>Latest Commits</h4>
+        </div>
         <ul id="commit-history">
             
         </ul>
@@ -116,7 +138,7 @@
                   </li>
               """)
         
-        container.find('h3').text("Latest Commits to #{username}/#{repo}")
+        container.find('h4').text("Latest Commits to #{username}/#{repo}")
 
         $.ajax(
             "https://api.github.com/repos/#{username}/#{repo}/commits?callback=callback"
