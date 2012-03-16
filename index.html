@@ -121,8 +121,6 @@
         limit = params.limit
         container = $('#latest-commits-widget')
 
-        limit = 10 # limits the number of results
-
         callback = (response) ->
           response = response.data
           ul = $('#commit-history') # the ul element for results
