@@ -12,8 +12,8 @@ Usage
 This widget is hosted via GitHub Pages, meaning all you need to do is include an iframe in your html and you're good to go. There are only 3 params at the moment: username, repo, and limit.
 
 ``` html
-<iframe src="http://tylerlh.github.com/github-latest-commits-widget/?username=USERNAME&repo=REPONAME&limit=LIMIT"
-  allowtransparency="true" frameborder="0" scrolling="0" width="500px" height="250px"></iframe>
+<iframe src="http://tylerlh.github.com/github-latest-commits-widget/?username=USERNAME&repo=REPO&limit=LIMIT"
+  allowtransparency="true" frameborder="0" scrolling="no" width="502px" height="252px"></iframe>
 ```
 
 ### Required Params
