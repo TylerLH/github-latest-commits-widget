@@ -67,7 +67,6 @@
     </div>
 
     <script type="text/coffeescript">
-      head = document.getElementsByTagName('head')[0]
       $.extend
         getUrlVars: ->
           vars = []
@@ -86,6 +85,7 @@
           $.getUrlVars()[name]
 
         jsonp = (path) ->
+          head = document.getElementsByTagName('head')[0]
           el = document.createElement("script")
           el.src = path + "?callback=callback"
           head.insertBefore el, head.firstChild
