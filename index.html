@@ -111,7 +111,7 @@
         
         container.find('h3').text("Latest Commits to #{username}/#{repo}")
 
-        $.getJSON "https://api.github.com/repos/#{username}/#{repo}/commits?Callback=window.callback",
+        $.getJSON "https://api.github.com/repos/#{username}/#{repo}/commits?callback=window.callback",
             limit: limit
           , (response) ->
             console.log(response)
