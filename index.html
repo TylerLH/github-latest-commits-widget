@@ -111,13 +111,7 @@
                   </li>
               """)
 
-        $.ajax(
-            "https://api.github.com/repos/#{username}/#{repo}/commits?callback=callback"
-            data:
-                per_page: limit
-            dataType: "json"
-            type: "get"
-        )
+        $.getJSON("https://api.github.com/repos/#{username}/#{repo}/commits?limit=#{limit}&callback=callback")
     </script>
   </body>
 </html>
