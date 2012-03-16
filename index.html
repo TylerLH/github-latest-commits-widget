@@ -1,6 +1,7 @@
 <html>
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="./jquery.timeago.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/coffee-script/1.2.0/coffee-script.min.js"></script>
     <style>
       #latest-commits-widget{
@@ -28,14 +29,20 @@
         border-bottom:1px solid #CACACA;
         color:#111;
         height:30px;
+        margin: 0;
         padding:5px 0 0 5px;
         text-shadow:1px 0 1px rgba(255, 255, 255, .7);
         font-size:1.3em;
         font-weight:bold
       }
       #latest-commits-widget ul#commit-history{
-        overflow-y:auto;height:214px}
+        overflow-y:auto;
+        height:214px;
+        padding-left: 0;
+        margin: 0;
+      }
       #latest-commits-widget ul#commit-history li{
+        list-style-type: none;
         background-color:#e1e1e1;
         background-image:-moz-linear-gradient(top, #f1f1f1, #e1e1e1);
         background-image:-ms-linear-gradient(top, #f1f1f1, #e1e1e1);
@@ -84,21 +91,6 @@
         getUrlVar: (name) ->
           $.getUrlVars()[name]
 
-      callback = (response) ->
-        response = response.data
-        ul = $('#commit-history') # the ul element for results
-        $(ul).empty
-        $(response).each (index, result) ->
-            $(ul).append("""
-                <li>
-                <div class="commit-author-info">
-                    <img class="commit-avatar" src="#{result.author.avatar_url}"> <a href="https://github.com/#{result.author.login}"><b class="commit-author">#{result.author.login}</b></a>
-                    <b class="commit-date">#{$.timeago(result.commit.committer.date)}</b><br /><i class="commit-sha">SHA: #{result.sha}</i>
-                </div>
-                <a class="commit-message" href="https://github.com/#{username}/#{repo}/commit/#{result.sha}" target="_blank">#{result.commit.message}</a>
-                </li>
-            """)
-
       $ ->
         params = $.getUrlVars()
         # config parameters
@@ -108,6 +100,21 @@
         container = $('#latest-commits-widget')
 
         limit = 10 # limits the number of results
+
+        callback = (response) ->
+          response = response.data
+          ul = $('#commit-history') # the ul element for results
+          $(ul).empty
+          $(response).each (index, result) ->
+              $(ul).append("""
+                  <li>
+                  <div class="commit-author-info">
+                      <img class="commit-avatar" src="#{result.author.avatar_url}"> <a href="https://github.com/#{result.author.login}"><b class="commit-author">#{result.author.login}</b></a>
+                      <b class="commit-date">#{$.timeago(result.commit.committer.date)}</b><br /><i class="commit-sha">SHA: #{result.sha}</i>
+                  </div>
+                  <a class="commit-message" href="https://github.com/#{username}/#{repo}/commit/#{result.sha}" target="_blank">#{result.commit.message}</a>
+                  </li>
+              """)
         
         container.find('h3').text("Latest Commits to #{username}/#{repo}")
 
