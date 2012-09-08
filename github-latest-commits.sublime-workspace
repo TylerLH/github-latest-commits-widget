@@ -1,0 +1,626 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"onD",
+				"onDragover"
+			],
+			[
+				"drop",
+				"droppedTask"
+			],
+			[
+				"new",
+				"new_position"
+			],
+			[
+				"re",
+				"reposition"
+			],
+			[
+				"task",
+				"taskList"
+			],
+			[
+				"authent",
+				"authentication_token"
+			],
+			[
+				"to",
+				"toEqual"
+			],
+			[
+				"user",
+				"userSession"
+			],
+			[
+				"User",
+				"UserRegistration"
+			],
+			[
+				"edit",
+				"editParticipants"
+			],
+			[
+				"da",
+				"data-prefetched-trials"
+			],
+			[
+				"text",
+				"textarea"
+			],
+			[
+				"att",
+				"attributes"
+			],
+			[
+				"Tr",
+				"TrialsRouter"
+			],
+			[
+				"max",
+				"maximum"
+			],
+			[
+				"new_user",
+				"new_user_session_path"
+			],
+			[
+				"des",
+				"destroy_user_session_path"
+			],
+			[
+				"current-pa",
+				"current-page-bubble"
+			],
+			[
+				"pr",
+				"primaryDark"
+			],
+			[
+				"session",
+				"session_params"
+			],
+			[
+				"ad",
+				"addEventListener"
+			],
+			[
+				"ses",
+				"session_params"
+			],
+			[
+				"conne",
+				"connectionData"
+			],
+			[
+				"pub",
+				"publisherDiv"
+			],
+			[
+				"sub",
+				"subscriberDiv"
+			],
+			[
+				"un",
+				"unpublishLink"
+			],
+			[
+				"disconne",
+				"disconnectLink"
+			],
+			[
+				"sess",
+				"sessionConnectedHandler"
+			],
+			[
+				"e",
+				"exception"
+			],
+			[
+				"ec",
+				"exceptionHandler"
+			],
+			[
+				"conv",
+				"conversation"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 4354,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/github-latest-commits.coffee",
+			"settings":
+			{
+				"buffer_size": 1689,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/Ruby/Ruby.sublime-build",
+	"command_palette":
+	{
+		"height": 67.0,
+		"selected_items":
+		[
+			[
+				"git push",
+				"Git: Push"
+			],
+			[
+				"git pull",
+				"Git: Pull"
+			],
+			[
+				"git com",
+				"Git: Commit"
+			],
+			[
+				"git add",
+				"Git: Add..."
+			],
+			[
+				"git stash pop",
+				"Git: Stash Pop"
+			],
+			[
+				"git stash ",
+				"Git: Stash Apply"
+			],
+			[
+				"git stash",
+				"Git: Stash Changes"
+			],
+			[
+				"git status",
+				"Git: Status"
+			],
+			[
+				"git pu",
+				"Git: Pull"
+			],
+			[
+				"git p",
+				"Git: Pull"
+			],
+			[
+				"git pul",
+				"Git: Pull"
+			],
+			[
+				"git stas",
+				"Git: Stash Apply"
+			],
+			[
+				"git commit",
+				"Git: Commit"
+			],
+			[
+				"git add ",
+				"Git: Add..."
+			],
+			[
+				"git add .",
+				"Git: Add..."
+			],
+			[
+				"git comm",
+				"Git: Commit"
+			],
+			[
+				"git pus",
+				"Git: Push"
+			],
+			[
+				"git me",
+				"Git: Merge Branch"
+			],
+			[
+				"git st",
+				"Git: Stash Pop"
+			],
+			[
+				"git",
+				"Git: Add..."
+			],
+			[
+				"git stat",
+				"Git: Status"
+			],
+			[
+				"git pull ",
+				"Git: Pull Current Branch"
+			],
+			[
+				"git push ",
+				"Git: Push Current Branch"
+			],
+			[
+				"git sta",
+				"Git: Status"
+			],
+			[
+				"git ",
+				"Git: Add..."
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 180.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/tyler/local/github-latest-commits-widget/coffeescript/github-latest-commits.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/views/studies/study_participants.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/templates/studies/list.hbs",
+		"/Users/tyler/local/yecore/app/assets/javascripts/templates/dashboard/index.hbs",
+		"/Users/tyler/local/yecore/app/assets/javascripts/templates/studies/item.hbs",
+		"/Users/tyler/local/yecore/app/assets/javascripts/routers/studies_router.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/views/dashboard/dashboard_index.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/config/formatters.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/application.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/fake_api.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/views/studies/study_item.coffee",
+		"/Users/tyler/local/yecore/app/assets/stylesheets/pages/studies/_list.scss",
+		"/Users/tyler/local/yecore/app/assets/javascripts/views/studies/study_list.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/collections/studies.coffee",
+		"/Users/tyler/local/yecore/vendor/assets/javascripts/vertebrae.js",
+		"/Users/tyler/local/yecore/app/assets/stylesheets/pages/studies/list.scss",
+		"/Users/tyler/local/yecore/app/assets/javascripts/views/surveys/survey.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/youeye.coffee",
+		"/Users/tyler/local/yecore/vendor/assets/javascripts/moment.min.js",
+		"/Users/tyler/local/yecore/app/assets/javascripts/views/studies/study_new.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/templates/tasks/task.hbs",
+		"/Users/tyler/local/yecore/app/assets/javascripts/templates/questions/item.hbs",
+		"/Users/tyler/local/yecore/app/assets/javascripts/routers/main_router.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/views/tasks/task_list.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/lib/views/form.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/views/sessions/session_new.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/views/tasks/task_item.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/views/questions/question_item.coffee",
+		"/Users/tyler/local/yecore/vendor/assets/javascripts/backbone.js",
+		"/Users/tyler/local/yecore/app/assets/javascripts/views/studies/study_review.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/routers/dashboard_router.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/templates/studies/empty.hbs",
+		"/Users/tyler/local/yecore/app/assets/javascripts/views/studies/studies_list.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/templates/surveys/form.hbs",
+		"/Users/tyler/local/yecore/app/assets/javascripts/templates/studies/new.hbs",
+		"/Users/tyler/local/yecore/app/assets/javascripts/templates/tasks/list.hbs",
+		"/Users/tyler/local/yecore/app/assets/javascripts/models/task.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/models/study.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/templates/studies/tasks.hbs",
+		"/Users/tyler/local/yecore/spec/javascripts/models/StudySpec.coffee",
+		"/Users/tyler/local/yecore/spec/javascripts/spec.css.scss",
+		"/Users/tyler/local/yecore/spec/javascripts/helpers/SpecHelper.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/views/tasks/task_index.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/views/surveys/survey_form.coffee",
+		"/Users/tyler/local/yecore/spec/javascripts/spec.js.coffee",
+		"/Users/tyler/local/yecore/spec/javascripts/views/StudyCreationSpec.coffee",
+		"/Users/tyler/local/yecore/spec/javascripts/support/jasmine.yml",
+		"/Users/tyler/local/yecore/config/routes.rb",
+		"/Users/tyler/local/yecore/spec/javascripts/helpers/SpecHelper.js",
+		"/Users/tyler/local/yecore/vendor/assets/javascripts/jasmine-jquery.js",
+		"/Users/tyler/local/yecore/lib/tasks/jscoverage.rake",
+		"/Users/tyler/local/yecore/spec/javascripts/specs_only.js.coffee",
+		"/Users/tyler/local/yecore/spec/javascripts/spec.css",
+		"/Users/tyler/local/yecore/app/assets/javascripts/helpers/form_helpers.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/templates/shared/notification.hbs",
+		"/Users/tyler/local/yecore/app/assets/javascripts/routers/sessions_router.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/views/sessions/new_session.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/models/users/user_registration.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/templates/users/new.hbs",
+		"/Users/tyler/local/yecore/app/assets/javascripts/views/studies/new_trial.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/routers/users_router.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/views/users/edit_user.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/templates/sessions/new.hbs",
+		"/Users/tyler/local/yecore/app/assets/javascripts/models/users/user_session.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/views/users/new_user.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/config/rivets.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/templates/shared/_topbar.hbs.erb",
+		"/Users/tyler/local/yecore/vendor/assets/javascripts/rivets.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/templates/layouts/main.hbs",
+		"/Users/tyler/local/yecore/app/assets/javascripts/templates/layouts/unauthenticated.hbs",
+		"/Users/tyler/local/yecore/app/assets/javascripts/routers/users.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/helpers.coffee",
+		"/Users/tyler/local/yecore/app/views/static/home.html.slim",
+		"/Users/tyler/local/yecore/app/views/layouts/application.html.slim",
+		"/Users/tyler/local/yecore/app/assets/javascripts/routers/studies.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/routers/sessions.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/templates/shared/_topbar.hbs",
+		"/Users/tyler/local/yecore/app/views/shared/_navbar.html.slim",
+		"/Users/tyler/local/yecore/app/assets/javascripts/models/users/user.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/views/dashboard/index.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/views/studies/participants.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/views/studies/review.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/routers/dashboard.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/templates/dashboard/index.hbs.erb",
+		"/Users/tyler/local/yecore/app/assets/javascripts/layouts/main.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/layouts/unauthenticated.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/models/user_registration.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/models/user_session.coffee",
+		"/Users/tyler/local/yecore/vendor/assets/javascripts/backbone-rails.sync.js",
+		"/Users/tyler/local/yecore/app/assets/javascripts/helpers/app_helpers.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/config/renderer.coffee",
+		"/Users/tyler/local/yecore/vendor/assets/javascripts/backbone.marionette.js",
+		"/Users/tyler/local/yecore/app/assets/javascripts/views/notifications/message.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/views/trials/participants.coffee",
+		"/Users/tyler/local/yecore/app/controllers/trials_controller.rb",
+		"/Users/tyler/local/yecore/app/assets/stylesheets/controllers/trials.scss",
+		"/Users/tyler/local/yecore/app/assets/javascripts/views/trials/review.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/templates/trials/review.hbs",
+		"/Users/tyler/local/yecore/app/assets/javascripts/templates/trials/new.hbs",
+		"/Users/tyler/local/yecore/app/assets/javascripts/routers/trials.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/config/routines.coffee",
+		"/Users/tyler/local/yecore/app/views/trials/review.html.slim",
+		"/Users/tyler/local/yecore/app/views/account/edit.html.slim",
+		"/Users/tyler/local/yecore/app/assets/stylesheets/application.scss",
+		"/Users/tyler/local/yecore/app/assets/javascripts/routines.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/formatters.coffee",
+		"/Users/tyler/local/yecore/app/controllers/account_controller.rb",
+		"/Users/tyler/local/yecore/app/assets/javascripts/templates/users/edit.hbs",
+		"/Users/tyler/local/yecore/vendor/assets/javascripts/underscore.inflection.js",
+		"/Users/tyler/local/yecore/app/assets/javascripts/templates/trials/participants.hbs.erb",
+		"/Users/tyler/local/yecore/app/assets/stylesheets/_popovers.scss",
+		"/Users/tyler/local/yecore/app/assets/javascripts/views/questions/question_form_item.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/views/trials/new_trial.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/templates/trials/participants.hbs",
+		"/Users/tyler/local/yecore/app/assets/javascripts/models/trial.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/templates/questions/question_form_item.hbs",
+		"/Users/tyler/local/yecore/app/models/survey.rb",
+		"/Users/tyler/local/yecore/app/models/question.rb",
+		"/Users/tyler/local/yecore/app/models/trial.rb",
+		"/Users/tyler/local/yecore/app/models/task.rb",
+		"/Users/tyler/local/yecore/app/assets/javascripts/models/survey.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/templates/questions/confirm_delete.hbs",
+		"/Users/tyler/local/yecore/app/views/trials/details.html.slim",
+		"/Users/tyler/local/yecore/app/assets/javascripts/models/question.coffee",
+		"/Users/tyler/local/yecore/app/assets/javascripts/templates/trials/task.hbs",
+		"/Users/tyler/local/yecore/app/assets/stylesheets/scaffolds.css.scss",
+		"/Users/tyler/local/yecore/app/assets/javascripts/views/trials/task_item.coffee",
+		"/Users/tyler/local/yecore/app/assets/stylesheets/_bootstrap_variables.scss"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/Users/tyler/local/yecore/app/assets/javascripts"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"YouEye.studies",
+			"focusFirstError",
+			"removeItemView",
+			"task",
+			"add_task\n",
+			"})\n",
+			"YouEye",
+			"App",
+			"task",
+			"Task",
+			"focus",
+			"active",
+			"#=",
+			"root",
+			"//",
+			"haml",
+			"btn",
+			"survey",
+			"#",
+			"//",
+			"subscribers",
+			"session",
+			"session_id",
+			"api_key",
+			"apiKey",
+			"sessionId",
+			"//"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"question",
+			"add_question",
+			"YouEye",
+			"question",
+			"//=",
+			"#",
+			"//",
+			"#",
+			"@session",
+			"session_params.api_key",
+			"api_key",
+			"session_id",
+			"#"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"settings":
+					{
+						"buffer_size": 4354,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3962,
+								3962
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 749.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/github-latest-commits.coffee",
+					"settings":
+					{
+						"buffer_size": 1689,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1342,
+								1342
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Coffeescript/Syntaxes/CoffeeScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 37.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.git":
+	{
+		"height": 143.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"js",
+				"lib/tasks/jscoverage.rake"
+			],
+			[
+				"new_trial",
+				"app/assets/javascripts/views/trials/new_trial.coffee"
+			],
+			[
+				"trials.scs",
+				"app/assets/stylesheets/controllers/trials.scss"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 235.0,
+	"status_bar_visible": true
+}
