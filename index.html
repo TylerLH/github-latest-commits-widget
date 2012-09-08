@@ -2,8 +2,34 @@
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="./jquery.timeago.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/coffee-script/1.2.0/coffee-script.min.js"></script>
+    <script src="./dist/github-latest-commits.js"></script>
     <style>
+    .clearfix:after {
+        content: ".";
+        display: block;
+        clear: both;
+        visibility: hidden;
+        line-height: 0;
+        height: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+       
+      .clearfix:after {
+           visibility: hidden;
+           display: block;
+           font-size: 0;
+           content: " ";
+           clear: both;
+           height: 0;
+           }
+      .clearfix { display: inline-block; }
+      /* start commented backslash hack \*/
+      * html .clearfix { height: 1%; }
+      .clearfix { display: block; }
+      /* close commented backslash hack */
       body {
         margin: 0;
         padding: 0;
@@ -71,17 +97,26 @@
         background-image:linear-gradient(center top, #f1f1f1 0%, #e1e1e1 100%);
         filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#f1f1f1', EndColorStr='#e1e1e1');
         border-bottom:1px solid #CACACA;
-        padding:5px
+        padding:5px;
+        width: 100%;
       }
-      #latest-commits-widget ul#commit-history li .commit-message{font-size:.8em;text-decoration:none}
+      #latest-commits-widget ul#commit-history li .commit-message{font-size:.8em;text-decoration:none;}
       #latest-commits-widget ul#commit-history li .commit-message:hover{text-decoration:underline}
       #latest-commits-widget ul#commit-history li .commit-sha{color:#999;font-size:.8em}
       #latest-commits-widget ul#commit-history li .commit-date{color:#444;font-size:.8em}
       #latest-commits-widget ul#commit-history li .commit-author-info a,#latest-commits-widget ul#commit-history li .commit-author-info a:visited{color:#444;text-decoration:none}
 
-      #latest-commits-widget ul#commit-history li .commit-author-info .commit-avatar{
-        height:32px;width:32px;border-radius:4px
+      #latest-commits-widget ul#commit-history li .commit-avatar{
+        margin-top:10px;
+        height:50px;width:50px;border-radius:4px
       }
+
+
+      #latest-commits-widget ul#commit-history li .commit-author-info {
+        padding: 10px;
+        width: 85%;
+      }
+      .left { float: left;}
       </style>
   </head>
   <body>
@@ -94,58 +129,5 @@
             
         </ul>
     </div>
-
-    <script type="text/coffeescript">
-      $.extend
-        getUrlVars: ->
-          vars = []
-          hash = undefined
-          hashes = window.location.href.slice(window.location.href.indexOf("?") + 1).split("&")
-          i = 0
-
-          while i < hashes.length
-            hash = hashes[i].split("=")
-            vars.push hash[0]
-            vars[hash[0]] = hash[1]
-            i++
-          vars
-
-        getUrlVar: (name) ->
-          $.getUrlVars()[name]
-
-      $ ->
-        params = $.getUrlVars()
-        # config parameters
-        username = params.username
-        repo = params.repo
-        limit = params.limit
-        container = $('#latest-commits-widget')
-
-        callback = (response) ->
-          response = response.data
-          ul = $('#commit-history') # the ul element for results
-          $(ul).empty
-          $(response).each (index, result) ->
-              $(ul).append("""
-                  <li>
-                  <div class="commit-author-info">
-                      <img class="commit-avatar" src="#{result.author.avatar_url}"> <a href="https://github.com/#{result.author.login}"><b class="commit-author">#{result.author.login}</b></a>
-                      <b class="commit-date">#{$.timeago(result.commit.committer.date)}</b><br /><i class="commit-sha">SHA: #{result.sha}</i>
-                  </div>
-                  <a class="commit-message" href="https://github.com/#{username}/#{repo}/commit/#{result.sha}" target="_blank">#{result.commit.message}</a>
-                  </li>
-              """)
-        
-        container.find('h4').text("Latest Commits to #{username}/#{repo}")
-
-        $.ajax(
-            "https://api.github.com/repos/#{username}/#{repo}/commits?callback=callback"
-            data:
-                per_page: limit
-            dataType: "jsonp"
-            type: "get"
-        ).success (response) ->
-            callback(response)
-    </script>
   </body>
 </html>

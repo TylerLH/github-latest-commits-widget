@@ -35,7 +35,7 @@ Things to Note
 
 + Width and height are hardcoded. Be sure to specify the default values (500x250) in your iframe and overload those values in the css if you want to change them.
 
-+ The widget currently depends on jquery, jquery.timeago, and coffeescript. Will simplify this more and compile the coffeescript to js as time allows. 
++ The widget currently depends on jquery and jquery.timeago at the moment.
 
 
 
