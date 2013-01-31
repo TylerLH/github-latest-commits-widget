@@ -67,7 +67,7 @@
         background-image:linear-gradient(center top, #f1f1f1 0%, #e1e1e1 100%);
         filter:progid:DXImageTransform.Microsoft.gradient(startColorStr='#f1f1f1', EndColorStr='#e1e1e1');
         border-bottom:1px solid #CACACA;
-        color:#111;
+        color:#52595d;
         height:30px;
         margin: 0;
         padding:5px 0 0 5px;
@@ -77,7 +77,6 @@
       }
       #latest-commits-header h4 {
         margin: 0;
-        padding: .25em 0 0 0;
         display: inline-block;
       }
       #latest-commits-widget ul#commit-history{
@@ -100,7 +99,7 @@
         padding:5px;
         width: 100%;
       }
-      #latest-commits-widget ul#commit-history li .commit-message{font-size:.8em;text-decoration:none;}
+      #latest-commits-widget ul#commit-history li .commit-message{font-size:.8em;text-decoration:none; line-height: 1.3em;}
       #latest-commits-widget ul#commit-history li .commit-message:hover{text-decoration:underline}
       #latest-commits-widget ul#commit-history li .commit-sha{color:#999;font-size:.8em}
       #latest-commits-widget ul#commit-history li .commit-date{color:#444;font-size:.8em}
@@ -108,7 +107,7 @@
 
       #latest-commits-widget ul#commit-history li .commit-avatar{
         margin-top:10px;
-        height:50px;width:50px;border-radius:4px
+        height:50px;width:50px;border-radius:4px;border:1px solid #dedede;
       }
 
 
@@ -125,9 +124,7 @@
           <div class="gh-ico"></div>
           <h4>Latest Commits</h4>
         </div>
-        <ul id="commit-history">
-            
-        </ul>
+        <ul id="commit-history"></ul>
     </div>
   </body>
 </html>

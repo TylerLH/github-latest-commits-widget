@@ -1,3 +1,6 @@
+###
+ Helper to parse query string params
+###
 $.extend
   getUrlVars: ->
     vars = []
