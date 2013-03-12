@@ -31,20 +31,21 @@ $ ->
     ul = $('#commit-history') # the ul element for results
     $(ul).empty
     $(response).each (index, result) ->
-        $(ul).append("""
-            <li class="clearfix">
-              <div class="left">
-                <img class="commit-avatar" src="#{result.author.avatar_url}">
-              </div>
-              <div class="commit-author-info left">
-                  <a href="https://github.com/#{result.author.login}"><b class="commit-author">#{result.author.login}</b></a>
-                  <br />
-                  <b class="commit-date">#{$.timeago(result.commit.committer.date)}</b><br /><i class="commit-sha">SHA: #{result.sha}</i>
-                  <br />
-                  <a class="commit-message" href="https://github.com/#{username}/#{repo}/commit/#{result.sha}" target="_blank">#{result.commit.message}</a>
-              </div>
-            </li>
-        """)
+        if result.author?
+          $(ul).append("""
+              <li class="clearfix">
+                <div class="left">
+                  <img class="commit-avatar" src="#{result.author.avatar_url}">
+                </div>
+                <div class="commit-author-info left">
+                    <a href="https://github.com/#{result.author.login}"><b class="commit-author">#{result.author.login}</b></a>
+                    <br />
+                    <b class="commit-date">#{$.timeago(result.commit.committer.date)}</b><br /><i class="commit-sha">SHA: #{result.sha}</i>
+                    <br />
+                    <a class="commit-message" href="https://github.com/#{username}/#{repo}/commit/#{result.sha}" target="_blank">#{result.commit.message}</a>
+                </div>
+              </li>
+          """)
   
   container.find('h4').text("Latest Commits to #{username}/#{repo}")
 
