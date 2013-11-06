@@ -24,6 +24,7 @@ $ ->
   username = params.username
   repo = params.repo
   limit = params.limit
+  branch = params.branch
   container = $('#latest-commits-widget')
 
   callback = (response) ->
@@ -49,8 +50,12 @@ $ ->
   
   container.find('h4').text("Latest Commits to #{username}/#{repo}")
 
+  url = "https://api.github.com/repos/#{username}/#{repo}/commits?callback=callback"
+  if params.branch?
+    url += "&sha=#{branch}"
+
   $.ajax(
-      "https://api.github.com/repos/#{username}/#{repo}/commits?callback=callback"
+      url
       data:
           per_page: limit
       dataType: "jsonp"
