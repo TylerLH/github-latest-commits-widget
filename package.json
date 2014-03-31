@@ -1,0 +1,30 @@
+{
+  "name": "github-latest-commits-widget",
+  "version": "0.0.2",
+  "description": "Unofficial Github Latest Commits Widget",
+  "main": "n/a",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/TylerLH/github-latest-commits-widget.git"
+  },
+  "author": "Tyler Hughes",
+  "license": "Apache 2",
+  "bugs": {
+    "url": "https://github.com/TylerLH/github-latest-commits-widget/issues"
+  },
+  "devDependencies": {
+    "gulp": "~3.6.0",
+    "gulp-coffee": "~1.4.1",
+    "gulp-compass": "^1.1.8",
+    "gulp-concat": "^2.2.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^0.2.1",
+    "gulp-util": "~2.2.14"
+  },
+  "dependencies": {
+    "coffee-script": "~1.7.1"
+  }
+}

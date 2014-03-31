@@ -30,10 +30,10 @@ $ ->
   callback = (response) ->
     response = response.data
     ul = $('#commit-history') # the ul element for results
-    $(ul).empty
+    ul.empty()
     $(response).each (index, result) ->
         if result.author?
-          $(ul).append("""
+          ul.append("""
               <li class="clearfix">
                 <div class="left">
                   <img class="commit-avatar" src="#{result.author.avatar_url}">

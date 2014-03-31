@@ -1,2 +1,18 @@
 *.sublime-project
 *.sublime-workspace
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Compiled binary addons (http://nodejs.org/api/addons.html)
+build/Release
+
+# Dependency directory
+node_modules
+
+.sass-cache
