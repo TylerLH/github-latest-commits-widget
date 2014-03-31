@@ -1,4 +1,4 @@
-@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+@import "//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css";
 /* line 17, ../../../../.rvm/gems/ruby-1.9.3-p327/gems/compass-0.12.4/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -64,13 +64,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* fontawesome */
-/* line 6, ../../src/scss/screen.scss */
-[class*="fontawesome-"]:before {
-  font-family: 'FontAwesome', sans-serif;
-}
-
-/* line 10, ../../src/scss/screen.scss */
+/* line 5, ../../src/scss/screen.scss */
 .clearfix:after {
   content: ".";
   display: block;
@@ -80,16 +74,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   height: 0;
 }
 
-/* line 19, ../../src/scss/screen.scss */
+/* line 14, ../../src/scss/screen.scss */
 * {
   box-sizing: border-box;
 }
 
-/* line 23, ../../src/scss/screen.scss */
+/* line 18, ../../src/scss/screen.scss */
 .clearfix {
   display: inline-block;
 }
-/* line 24, ../../src/scss/screen.scss */
+/* line 19, ../../src/scss/screen.scss */
 .clearfix:after {
   visibility: hidden;
   display: block;
@@ -100,30 +94,30 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /* start commented backslash hack \*/
-/* line 37, ../../src/scss/screen.scss */
+/* line 32, ../../src/scss/screen.scss */
 * html .clearfix {
   height: 1%;
 }
 
-/* line 41, ../../src/scss/screen.scss */
+/* line 36, ../../src/scss/screen.scss */
 .clearfix {
   display: block;
 }
 
 /* close commented backslash hack */
-/* line 47, ../../src/scss/screen.scss */
+/* line 42, ../../src/scss/screen.scss */
 body {
   margin: 0;
   padding: 0;
 }
 
-/* line 52, ../../src/scss/screen.scss */
+/* line 47, ../../src/scss/screen.scss */
 .gh-icon {
   font-size: 1.5rem;
   line-height: 1.5rem;
 }
 
-/* line 57, ../../src/scss/screen.scss */
+/* line 52, ../../src/scss/screen.scss */
 #latest-commits-widget {
   border: 1px solid #cacaca;
   width: 500px;
@@ -131,20 +125,20 @@ body {
   font: 13px helvetica, arial, freesans, clean, sans-serif;
   background: #dedede;
 }
-/* line 63, ../../src/scss/screen.scss */
+/* line 58, ../../src/scss/screen.scss */
 #latest-commits-widget a {
   color: #4183c4;
 }
-/* line 65, ../../src/scss/screen.scss */
+/* line 60, ../../src/scss/screen.scss */
 #latest-commits-widget a:visited {
   color: #4183c4;
 }
-/* line 68, ../../src/scss/screen.scss */
+/* line 63, ../../src/scss/screen.scss */
 #latest-commits-widget a:hover {
   text-decoration: underline;
 }
 
-/* line 74, ../../src/scss/screen.scss */
+/* line 69, ../../src/scss/screen.scss */
 #latest-commits-header {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f1f1f1), color-stop(100%, #e1e1e1));
   background-image: -webkit-linear-gradient(#f1f1f1, #e1e1e1);
@@ -160,20 +154,20 @@ body {
   font-size: 1.3em;
   font-weight: bold;
 }
-/* line 84, ../../src/scss/screen.scss */
+/* line 79, ../../src/scss/screen.scss */
 #latest-commits-header h4 {
   margin: 3px 0;
   display: inline-block;
 }
 
-/* line 90, ../../src/scss/screen.scss */
+/* line 85, ../../src/scss/screen.scss */
 #latest-commits-widget ul#commit-history {
   overflow-y: auto;
   height: 214px;
   padding-left: 0;
   margin: 0;
 }
-/* line 95, ../../src/scss/screen.scss */
+/* line 90, ../../src/scss/screen.scss */
 #latest-commits-widget ul#commit-history li {
   list-style-type: none;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f1f1f1), color-stop(100%, #e1e1e1));
@@ -185,37 +179,37 @@ body {
   padding: 5px;
   width: 100%;
 }
-/* line 101, ../../src/scss/screen.scss */
+/* line 96, ../../src/scss/screen.scss */
 #latest-commits-widget ul#commit-history li .commit-message {
   font-size: .8em;
   text-decoration: none;
   line-height: 1.3em;
 }
-/* line 105, ../../src/scss/screen.scss */
+/* line 100, ../../src/scss/screen.scss */
 #latest-commits-widget ul#commit-history li .commit-message:hover {
   text-decoration: underline;
 }
-/* line 109, ../../src/scss/screen.scss */
+/* line 104, ../../src/scss/screen.scss */
 #latest-commits-widget ul#commit-history li .commit-sha {
   color: #999;
   font-size: .8em;
 }
-/* line 113, ../../src/scss/screen.scss */
+/* line 108, ../../src/scss/screen.scss */
 #latest-commits-widget ul#commit-history li .commit-date {
   color: #444;
   font-size: .8em;
 }
-/* line 117, ../../src/scss/screen.scss */
+/* line 112, ../../src/scss/screen.scss */
 #latest-commits-widget ul#commit-history li .commit-author-info a {
   color: #444;
   text-decoration: none;
 }
-/* line 120, ../../src/scss/screen.scss */
+/* line 115, ../../src/scss/screen.scss */
 #latest-commits-widget ul#commit-history li .commit-author-info a:visited {
   color: #444;
   text-decoration: none;
 }
-/* line 125, ../../src/scss/screen.scss */
+/* line 120, ../../src/scss/screen.scss */
 #latest-commits-widget ul#commit-history li .commit-avatar {
   margin-top: 10px;
   height: 50px;
@@ -223,13 +217,13 @@ body {
   border-radius: 4px;
   border: 1px solid #dedede;
 }
-/* line 132, ../../src/scss/screen.scss */
+/* line 127, ../../src/scss/screen.scss */
 #latest-commits-widget ul#commit-history li .commit-author-info {
   padding: 10px;
   width: 85%;
 }
 
-/* line 139, ../../src/scss/screen.scss */
+/* line 134, ../../src/scss/screen.scss */
 .left {
   float: left;
 }

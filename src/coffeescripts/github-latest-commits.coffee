@@ -28,10 +28,11 @@ $ ->
   container = $('#latest-commits-widget')
 
   callback = (response) ->
-    response = response.data
+    items = response.data
     ul = $('#commit-history') # the ul element for results
     ul.empty()
-    $(response).each (index, result) ->
+    for index, result of items
+      do (index, result) ->
         if result.author?
           ul.append("""
               <li class="clearfix">

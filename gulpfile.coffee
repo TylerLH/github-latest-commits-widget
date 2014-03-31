@@ -10,8 +10,9 @@ gulp.task 'default', ['scripts', 'compass', 'watch'], ->
   console.log 'Gulpin...'
 
 gulp.task 'watch', ->
-  gulp.watch('./src/javascripts/*.coffee', ['coffee'])
-  gulp.watch('./src/stylesheets/*.scss', ['compass'])
+  gulp.watch('./src/coffeescripts/*.coffee', ['coffee'])
+  gulp.watch('./src/javascripts/*.js', ['scripts'])
+  gulp.watch('./src/scss/*.scss', ['compass'])
 
 # Process all JS-related stuff
 gulp.task 'scripts', ['coffee'], ->
