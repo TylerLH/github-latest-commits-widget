@@ -3,7 +3,7 @@ UNOFFICIAL GITHUB LATEST COMMITS WIDGET
 
 Show the latest commit activity on your repo, keeping the community updated and giving users more incentive to contribute to your project with this widget.
 
-Inspired by https://github.com/markdotto/github-buttons
+Inspired by https://github.com/mdo/github-buttons
 
 Check out a demo of the widget in action @ http://tylerlh.github.com/github-latest-commits-widget/?username=plataformatec&repo=devise&limit=10
 
