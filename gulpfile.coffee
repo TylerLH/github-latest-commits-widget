@@ -3,6 +3,8 @@ gutil   = require 'gulp-util'
 coffee  = require 'gulp-coffee'
 compass = require 'gulp-compass'
 concat  = require 'gulp-concat'
+rename  = require 'gulp-rename'
+uglify  = require 'gulp-uglify'
 
 gulp.task 'default', ['scripts', 'compass', 'watch'], ->
   console.log 'Gulpin...'
@@ -16,8 +18,11 @@ gulp.task 'scripts', ['coffee'], ->
   gulp.src('./src/javascripts/*.js')
     .pipe(concat('bundle.js'))
     .pipe(gulp.dest('./dist/javascripts/'))
+    .pipe(rename('bundle.min.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest('./dist/javascripts/'))
 
-# Compile all le Coffeescript
+# Compile le Coffeescript
 gulp.task 'coffee', ->
   gulp.src('./src/coffeescripts/*.coffee')
     .pipe(coffee(bare: true).on('error', gutil.log))
