@@ -1,14 +1,18 @@
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+var timeago;
+
+timeago = require('timeago');
+
 
 /*
  Helper to parse query string params
  */
+
 $.extend({
   getUrlVars: function() {
-    var hash, hashes, i, vars;
+    var hash, hashes, vars;
     vars = [];
-    hash = void 0;
     hashes = window.location.href.slice(window.location.href.indexOf("?") + 1).split("&");
-    i = 0;
     while (i < hashes.length) {
       hash = hashes[i].split("=");
       vars.push(hash[0]);
@@ -40,7 +44,7 @@ $(function() {
       result = items[index];
       _results.push((function(index, result) {
         if (result.author != null) {
-          return ul.append("<li class=\"clearfix\">\n  <div class=\"left\">\n    <img class=\"commit-avatar\" src=\"" + result.author.avatar_url + "\">\n  </div>\n  <div class=\"commit-author-info left\">\n      <a href=\"https://github.com/" + result.author.login + "\"><b class=\"commit-author\">" + result.author.login + "</b></a>\n      <br />\n      <b class=\"commit-date\">" + ($.timeago(result.commit.committer.date)) + "</b><br /><i class=\"commit-sha\">SHA: " + result.sha + "</i>\n      <br />\n      <a class=\"commit-message\" href=\"https://github.com/" + username + "/" + repo + "/commit/" + result.sha + "\" target=\"_blank\">" + result.commit.message + "</a>\n  </div>\n</li>");
+          return ul.append("<li class=\"clearfix\">\n  <div class=\"left\">\n    <img class=\"commit-avatar\" src=\"" + result.author.avatar_url + "\">\n  </div>\n  <div class=\"commit-author-info left\">\n      <a href=\"https://github.com/" + result.author.login + "\"><b class=\"commit-author\">" + result.author.login + "</b></a>\n      <br />\n      <b class=\"commit-date\">" + (timeago(result.commit.committer.date)) + "</b><br /><i class=\"commit-sha\">SHA: " + result.sha + "</i>\n      <br />\n      <a class=\"commit-message\" href=\"https://github.com/" + username + "/" + repo + "/commit/" + result.sha + "\" target=\"_blank\">" + result.commit.message + "</a>\n  </div>\n</li>");
         }
       })(index, result));
     }
@@ -62,12 +66,19 @@ $(function() {
   });
 });
 
-/**
+
+
+},{"timeago":2}],2:[function(require,module,exports){
+/*
+ * node-timeago
+ * Cam Pedersen
+ * <diffference@gmail.com>
+ * Oct 6, 2011
  * Timeago is a jQuery plugin that makes it easy to support automatically
  * updating fuzzy timestamps (e.g. "4 minutes ago" or "about 1 day ago").
  *
  * @name timeago
- * @version 0.11.1
+ * @version 0.10.0
  * @requires jQuery v1.2.3+
  * @author Ryan McGeary
  * @license MIT License - http://www.opensource.org/licenses/mit-license.php
@@ -77,136 +88,95 @@ $(function() {
  *
  * Copyright (c) 2008-2011, Ryan McGeary (ryanonjavascript -[at]- mcgeary [*dot*] org)
  */
-(function($) {
-  $.timeago = function(timestamp) {
-    if (timestamp instanceof Date) {
-      return inWords(timestamp);
-    } else if (typeof timestamp === "string") {
-      return inWords($.timeago.parse(timestamp));
-    } else {
-      return inWords($.timeago.datetime(timestamp));
+module.exports = function (timestamp) {
+  if (timestamp instanceof Date) {
+    return inWords(timestamp);
+  } else if (typeof timestamp === "string") {
+    return inWords(parse(timestamp));
+  }
+};
+
+var settings = {
+  allowFuture: false,
+  strings: {
+    prefixAgo: null,
+    prefixFromNow: null,
+    suffixAgo: "ago",
+    suffixFromNow: "from now",
+    seconds: "less than a minute",
+    minute: "about a minute",
+    minutes: "%d minutes",
+    hour: "about an hour",
+    hours: "about %d hours",
+    day: "a day",
+    days: "%d days",
+    month: "about a month",
+    months: "%d months",
+    year: "about a year",
+    years: "%d years",
+    numbers: []
+  }
+};
+
+var $l = settings.strings;
+
+module.exports.settings = settings;
+
+$l.inWords = function (distanceMillis) {
+  var prefix = $l.prefixAgo;
+  var suffix = $l.suffixAgo;
+  if (settings.allowFuture) {
+    if (distanceMillis < 0) {
+      prefix = $l.prefixFromNow;
+      suffix = $l.suffixFromNow;
     }
-  };
-  var $t = $.timeago;
-
-  $.extend($.timeago, {
-    settings: {
-      refreshMillis: 60000,
-      allowFuture: false,
-      strings: {
-        prefixAgo: null,
-        prefixFromNow: null,
-        suffixAgo: "ago",
-        suffixFromNow: "from now",
-        seconds: "less than a minute",
-        minute: "about a minute",
-        minutes: "%d minutes",
-        hour: "about an hour",
-        hours: "about %d hours",
-        day: "a day",
-        days: "%d days",
-        month: "about a month",
-        months: "%d months",
-        year: "about a year",
-        years: "%d years",
-        wordSeparator: " ",
-        numbers: []
-      }
-    },
-    inWords: function(distanceMillis) {
-      var $l = this.settings.strings;
-      var prefix = $l.prefixAgo;
-      var suffix = $l.suffixAgo;
-      if (this.settings.allowFuture) {
-        if (distanceMillis < 0) {
-          prefix = $l.prefixFromNow;
-          suffix = $l.suffixFromNow;
-        }
-      }
-
-      var seconds = Math.abs(distanceMillis) / 1000;
-      var minutes = seconds / 60;
-      var hours = minutes / 60;
-      var days = hours / 24;
-      var years = days / 365;
-
-      function substitute(stringOrFunction, number) {
-        var string = $.isFunction(stringOrFunction) ? stringOrFunction(number, distanceMillis) : stringOrFunction;
-        var value = ($l.numbers && $l.numbers[number]) || number;
-        return string.replace(/%d/i, value);
-      }
-
-      var words = seconds < 45 && substitute($l.seconds, Math.round(seconds)) ||
-        seconds < 90 && substitute($l.minute, 1) ||
-        minutes < 45 && substitute($l.minutes, Math.round(minutes)) ||
-        minutes < 90 && substitute($l.hour, 1) ||
-        hours < 24 && substitute($l.hours, Math.round(hours)) ||
-        hours < 42 && substitute($l.day, 1) ||
-        days < 30 && substitute($l.days, Math.round(days)) ||
-        days < 45 && substitute($l.month, 1) ||
-        days < 365 && substitute($l.months, Math.round(days / 30)) ||
-        years < 1.5 && substitute($l.year, 1) ||
-        substitute($l.years, Math.round(years));
-
-      var separator = $l.wordSeparator === undefined ?  " " : $l.wordSeparator;
-      return $.trim([prefix, words, suffix].join(separator));
-    },
-    parse: function(iso8601) {
-      var s = $.trim(iso8601);
-      s = s.replace(/\.\d\d\d+/,""); // remove milliseconds
-      s = s.replace(/-/,"/").replace(/-/,"/");
-      s = s.replace(/T/," ").replace(/Z/," UTC");
-      s = s.replace(/([\+\-]\d\d)\:?(\d\d)/," $1$2"); // -04:00 -> -0400
-      return new Date(s);
-    },
-    datetime: function(elem) {
-      // jQuery's `is()` doesn't play well with HTML5 in IE
-      var isTime = $(elem).get(0).tagName.toLowerCase() === "time"; // $(elem).is("time");
-      var iso8601 = isTime ? $(elem).attr("datetime") : $(elem).attr("title");
-      return $t.parse(iso8601);
-    }
-  });
-
-  $.fn.timeago = function() {
-    var self = this;
-    self.each(refresh);
-
-    var $s = $t.settings;
-    if ($s.refreshMillis > 0) {
-      setInterval(function() { self.each(refresh); }, $s.refreshMillis);
-    }
-    return self;
-  };
-
-  function refresh() {
-    var data = prepareData(this);
-    if (!isNaN(data.datetime)) {
-      $(this).text(inWords(data.datetime));
-    }
-    return this;
   }
 
-  function prepareData(element) {
-    element = $(element);
-    if (!element.data("timeago")) {
-      element.data("timeago", { datetime: $t.datetime(element) });
-      var text = $.trim(element.text());
-      if (text.length > 0) {
-        element.attr("title", text);
-      }
-    }
-    return element.data("timeago");
+  var seconds = Math.abs(distanceMillis) / 1000;
+  var minutes = seconds / 60;
+  var hours = minutes / 60;
+  var days = hours / 24;
+  var years = days / 365;
+
+  function substitute (stringOrFunction, number) {
+    var string = typeof stringOrFunction === 'function' ? stringOrFunction(number, distanceMillis) : stringOrFunction;
+    var value = ($l.numbers && $l.numbers[number]) || number;
+    return string.replace(/%d/i, value);
   }
 
-  function inWords(date) {
-    return $t.inWords(distance(date));
-  }
+  var words = seconds < 45 && substitute($l.seconds, Math.round(seconds)) ||
+    seconds < 90 && substitute($l.minute, 1) ||
+    minutes < 45 && substitute($l.minutes, Math.round(minutes)) ||
+    minutes < 90 && substitute($l.hour, 1) ||
+    hours < 24 && substitute($l.hours, Math.round(hours)) ||
+    hours < 48 && substitute($l.day, 1) ||
+    days < 30 && substitute($l.days, Math.floor(days)) ||
+    days < 60 && substitute($l.month, 1) ||
+    days < 365 && substitute($l.months, Math.floor(days / 30)) ||
+    years < 2 && substitute($l.year, 1) ||
+    substitute($l.years, Math.floor(years));
 
-  function distance(date) {
-    return (new Date().getTime() - date.getTime());
-  }
+  return [prefix, words, suffix].join(" ").toString().trim();
+};
 
-  // fix for IE6 suckage
-  document.createElement("abbr");
-  document.createElement("time");
-}(jQuery));
+function parse (iso8601) {
+  if (!iso8601) return;
+  var s = iso8601.trim();
+  s = s.replace(/\.\d\d\d+/,""); // remove milliseconds
+  s = s.replace(/-/,"/").replace(/-/,"/");
+  s = s.replace(/T/," ").replace(/Z/," UTC");
+  s = s.replace(/([\+\-]\d\d)\:?(\d\d)/," $1$2"); // -04:00 -> -0400
+  return new Date(s);
+}
+
+$l.parse = parse;
+
+function inWords (date) {
+  return $l.inWords(distance(date));
+}
+
+function distance (date) {
+  return (new Date().getTime() - date.getTime());
+}
+
+},{}]},{},[1]);

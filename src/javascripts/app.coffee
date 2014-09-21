@@ -1,12 +1,12 @@
+timeago = require 'timeago'
+
 ###
  Helper to parse query string params
 ###
 $.extend
   getUrlVars: ->
     vars = []
-    hash = undefined
     hashes = window.location.href.slice(window.location.href.indexOf("?") + 1).split("&")
-    i = 0
 
     while i < hashes.length
       hash = hashes[i].split("=")
@@ -42,7 +42,7 @@ $ ->
                 <div class="commit-author-info left">
                     <a href="https://github.com/#{result.author.login}"><b class="commit-author">#{result.author.login}</b></a>
                     <br />
-                    <b class="commit-date">#{$.timeago(result.commit.committer.date)}</b><br /><i class="commit-sha">SHA: #{result.sha}</i>
+                    <b class="commit-date">#{timeago(result.commit.committer.date)}</b><br /><i class="commit-sha">SHA: #{result.sha}</i>
                     <br />
                     <a class="commit-message" href="https://github.com/#{username}/#{repo}/commit/#{result.sha}" target="_blank">#{result.commit.message}</a>
                 </div>

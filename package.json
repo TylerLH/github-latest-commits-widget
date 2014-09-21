@@ -15,14 +15,27 @@
   "bugs": {
     "url": "https://github.com/TylerLH/github-latest-commits-widget/issues"
   },
+  "browserify": {
+    "transform": [
+      "coffeeify",
+      "debowerify"
+    ]
+  },
   "devDependencies": {
+    "browserify": "^5.12.0",
+    "coffeeify": "^0.7.0",
+    "debowerify": "^0.8.1",
     "gulp": "~3.6.0",
-    "gulp-coffee": "~1.4.1",
-    "gulp-compass": "^1.1.8",
+    "gulp-autoprefixer": "^1.0.0",
     "gulp-concat": "^2.2.0",
+    "gulp-if": "^1.2.4",
+    "gulp-load-plugins": "^0.6.0",
     "gulp-rename": "^1.2.0",
+    "gulp-sass": "^0.7.3",
     "gulp-uglify": "^0.2.1",
-    "gulp-util": "~2.2.14"
+    "gulp-util": "~2.2.14",
+    "timeago": "^0.1.0",
+    "vinyl-source-stream": "^1.0.0"
   },
   "dependencies": {
     "coffee-script": "~1.7.1"
