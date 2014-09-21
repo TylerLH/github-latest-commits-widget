@@ -1,16 +1,36 @@
 <html>
   <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="./dist/javascripts/bundle.min.js"></script>
     <link rel="stylesheet" type="text/css" href="./dist/stylesheets/screen.css">
   </head>
   <body>
+  
+  <script type="text/template" id="commit-tmpl">
+
+    <div class="left">
+      <a href="https://github.com/${result.author.login}" title="${result.author.login} on Github">
+        <img class="commit-avatar" src="${result.author.avatar_url}">
+      </a>
+    </div>
+    <div class="commit-author-info left">
+        <a href="https://github.com/${result.author.login}">
+          <b class="commit-author">${result.author.login}</b>
+        </a>
+        <br />
+        <b class="commit-date">${timeago(result.commit.committer.date)}</b><br /><i class="commit-sha">SHA: ${result.sha}</i>
+        <br />
+        <a class="commit-message" href="https://github.com/${username}/${repo}/commit/${result.sha}" target="_blank"><%- result.commit.message %></a>
+    </div>
+
+  </script>
+
     <div id="latest-commits-widget">
         <div id="latest-commits-header">
           <i class="fa fa-github gh-icon"></i>
-          <h4>Latest Commits</h4>
+          <h4 id="widget-title">Latest Commits</h4>
         </div>
         <ul id="commit-history"></ul>
     </div>
+
+    <script src="./dist/javascripts/bundle.js"></script>
   </body>
 </html>

@@ -34,6 +34,8 @@
     "gulp-sass": "^0.7.3",
     "gulp-uglify": "^0.2.1",
     "gulp-util": "~2.2.14",
+    "gulp-webserver": "^0.8.1",
+    "lodash": "^2.4.1",
     "timeago": "^0.1.0",
     "vinyl-source-stream": "^1.0.0"
   },

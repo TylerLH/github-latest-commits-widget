@@ -41,8 +41,9 @@ body {
   border: 1px solid #cacaca;
   width: 500px;
   height: 250px;
-  font: 13px helvetica, arial, freesans, clean, sans-serif;
-  background: #dedede; }
+  font: 14px "Helvetica Neue", helvetica, arial, freesans, clean, sans-serif;
+  background: #dedede;
+  overflow-y: scroll; }
   #latest-commits-widget a {
     color: #4183c4; }
     #latest-commits-widget a:visited {
@@ -55,7 +56,7 @@ body {
   background-image: linear-gradient(#f1f1f1, #e1e1e1);
   border-bottom: 1px solid #CACACA;
   color: #52595d;
-  height: 35px;
+  height: 40px;
   margin: 0;
   padding: 5px 0 0 5px;
   text-shadow: 1px 0 1px rgba(255, 255, 255, 0.7);
@@ -99,7 +100,7 @@ body {
       margin-top: 10px;
       height: 50px;
       width: 50px;
-      border-radius: 4px;
+      border-radius: 50px;
       border: 1px solid #dedede; }
     #latest-commits-widget ul#commit-history li .commit-author-info {
       padding: 10px;

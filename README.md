@@ -5,7 +5,7 @@ Show the latest commit activity on your repo, keeping the community updated and 
 
 Inspired by https://github.com/mdo/github-buttons
 
-Check out a demo of the widget in action @ http://tylerlh.github.com/github-latest-commits-widget/?username=plataformatec&repo=devise&limit=10
+Check out a demo of the widget in action @ http://tylerlh.github.com/github-latest-commits-widget/?username=twbs&repo=bootstrap&limit=10
 
 
 Usage
@@ -18,7 +18,7 @@ This widget is hosted via GitHub Pages, meaning all you need to do is include an
   allowtransparency="true" frameborder="0" scrolling="no" width="502px" height="252px"></iframe>
 ```
 
-### Required Params
+### Parameters
 
 `username`<br>
 GitHub username that owns the repo<br>
@@ -27,7 +27,7 @@ GitHub username that owns the repo<br>
 GitHub repository to check for activity
 
 `limit`<br>
-The maximum number of results to list
+The maximum number of results to list (default: 10)
 
 
 Things to Note
@@ -35,14 +35,27 @@ Things to Note
 
 + Width and height are hardcoded. Be sure to specify the default values (500x250) in your iframe and overload those values in the css if you want to change them.
 
-+ The widget currently depends on jquery and jquery.timeago at the moment.
-
 
 
 Bug tracker
 -----------
 
 Have a bug? Open a new issue at https://github.com/tylerlh/github-latest-commits-widget/issues
+
+
+Development
+-----------------
+
+If you want to contribute to this project or fork it, the tips below should help you get started.
+
+These steps assume you have Node.js and [Gulp](http://gulpjs.com/) installed.
+
+1. Clone the project &mdash; `git clone https://github.com/TylerLH/github-latest-commits-widget.git`
+2. Install dependencies &mdash; `npm install`
+3. Run the development server using `gulp watch`
+4. Build the project for production using `gulp --type production`
+
+Contributions and suggestions are welcome.
 
 
 
@@ -59,7 +72,7 @@ Authors
 Copyright and license
 ---------------------
 
-Copyright 2012-2013 Tyler Hughes.
+Copyright 2012-2014 Tyler Hughes.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this work except in compliance with the License.

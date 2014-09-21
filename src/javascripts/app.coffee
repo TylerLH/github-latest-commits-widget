@@ -1,65 +1,38 @@
-timeago = require 'timeago'
+window.timeago = require 'timeago'
+params   = do require './params'
+window._       = require 'lodash'
 
-###
- Helper to parse query string params
-###
-$.extend
-  getUrlVars: ->
-    vars = []
-    hashes = window.location.href.slice(window.location.href.indexOf("?") + 1).split("&")
+# config parameters
+username = params.username
+repo = params.repo
+limit = params.limit || 10
+branch = params.branch
+title = document.querySelector '#widget-title'
 
-    while i < hashes.length
-      hash = hashes[i].split("=")
-      vars.push hash[0]
-      vars[hash[0]] = hash[1]
-      i++
-    vars
+window.renderHistory = (response) ->
+  items = response.data
+  commitTmpl = document.querySelector('#commit-tmpl').innerHTML
+  ul = document.querySelector '#commit-history' # the ul element for results
+  ul.children = []
+  for index, result of items
+    do (index, result) ->
+      if result.author?
+        li = document.createElement 'li'
+        li.className = 'clearfix'
+        data =
+          result: result
+          username: username
+          repo: repo
+        li.innerHTML = _.template commitTmpl, data
+        ul.appendChild li
 
-  getUrlVar: (name) ->
-    $.getUrlVars()[name]
+title.innerText = "Latest Commits to #{username}/#{repo}"
 
-$ ->
-  params = $.getUrlVars()
-  # config parameters
-  username = params.username
-  repo = params.repo
-  limit = params.limit
-  branch = params.branch
-  container = $('#latest-commits-widget')
+url = "https://api.github.com/repos/#{username}/#{repo}/commits?callback=renderHistory"
+if params.branch?
+  url += "&sha=#{branch}"
 
-  callback = (response) ->
-    items = response.data
-    ul = $('#commit-history') # the ul element for results
-    ul.empty()
-    for index, result of items
-      do (index, result) ->
-        if result.author?
-          ul.append("""
-              <li class="clearfix">
-                <div class="left">
-                  <img class="commit-avatar" src="#{result.author.avatar_url}">
-                </div>
-                <div class="commit-author-info left">
-                    <a href="https://github.com/#{result.author.login}"><b class="commit-author">#{result.author.login}</b></a>
-                    <br />
-                    <b class="commit-date">#{timeago(result.commit.committer.date)}</b><br /><i class="commit-sha">SHA: #{result.sha}</i>
-                    <br />
-                    <a class="commit-message" href="https://github.com/#{username}/#{repo}/commit/#{result.sha}" target="_blank">#{result.commit.message}</a>
-                </div>
-              </li>
-          """)
-  
-  container.find('h4').text("Latest Commits to #{username}/#{repo}")
-
-  url = "https://api.github.com/repos/#{username}/#{repo}/commits?callback=callback"
-  if params.branch?
-    url += "&sha=#{branch}"
-
-  $.ajax(
-      url
-      data:
-          per_page: limit
-      dataType: "jsonp"
-      type: "get"
-  ).success (response) ->
-      callback(response)
+script = document.createElement 'script'
+script.src = url
+document.getElementsByTagName('head')[0]
+  .appendChild script
