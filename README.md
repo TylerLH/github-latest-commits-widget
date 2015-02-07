@@ -51,8 +51,8 @@ These steps assume you have Node.js (0.10.x) and [Gulp](http://gulpjs.com/) inst
 
 1. Clone the project &mdash; `git clone https://github.com/TylerLH/github-latest-commits-widget.git`
 2. Install dependencies &mdash; `npm install`
-3. Run the development server using `gulp watch`
-4. Build the project for production using `gulp --type production`
+3. Run the development server using `npm run dev`
+4. Build the project for production using `npm run build`
 
 Contributions and suggestions are welcome.
 
