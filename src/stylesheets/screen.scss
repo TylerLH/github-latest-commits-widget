@@ -37,7 +37,15 @@
 
 /* close commented backslash hack */
 
+.vertical-center {
+  position: relative;
+  top: 50%;
+  transform: translateY(50%);
+}
+
 body {
+  height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
 }
@@ -49,11 +57,12 @@ body {
 
 #latest-commits-widget {
   border: 1px solid #cacaca;
-  width: 500px;
-  height: 250px;
+  width: 100%;
+  height: 100%;
   font: 14px "Helvetica Neue", helvetica, arial, freesans, clean, sans-serif;
   background: #dedede;
-  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
   a {
     color: #4183c4;
     &:visited {
@@ -62,6 +71,10 @@ body {
     &:hover {
       text-decoration: underline;
     }
+  }
+
+  p {
+    margin: 0.5em 0;
   }
 }
 
@@ -72,30 +85,46 @@ body {
   height: 40px;
   margin: 0;
   padding: 5px 0 0 5px;
-  text-shadow: 1px 0 1px rgba(255, 255, 255, 0.7);
   font-size: 1.3em;
+  line-height: 1.3em;
   font-weight: bold;
   h4 {
     margin: 3px 0;
     display: inline-block;
+
+    a {
+      color: #52595d;
+      &:hover {
+        color: #4183c4;
+      }
+    }
   }
 }
 
 #latest-commits-widget ul#commit-history {
-  overflow-y: auto;
-  height: 214px;
+  flex: 1;
   padding-left: 0;
   margin: 0;
+  overflow-y: scroll;
   li {
     list-style-type: none;
-    background-image: linear-gradient(#f1f1f1, #e1e1e1);
-    border-bottom: 1px solid #CACACA;
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #DEDEDE;
     padding: 5px;
     width: 100%;
+    position: relative;
+    .commit-author {
+      font-size: 1.1em;
+      transition: all ease-in-out 0.2s;
+      &:hover {
+        color: #4183c4;
+      }
+    }
     .commit-message {
-      font-size: .8em;
+      font-size: 0.9em;
       text-decoration: none;
-      line-height: 1.3em;
+      line-height: 1.2em;
+      font-weight: bold;
       &:hover {
         text-decoration: underline;
       }
@@ -105,7 +134,7 @@ body {
       font-size: .8em;
     }
     .commit-date {
-      color: #444;
+      color: #999;
       font-size: .8em;
     }
     .commit-author-info a {
@@ -117,7 +146,7 @@ body {
       }
     }
     .commit-avatar {
-      margin-top: 10px;
+      //margin-top: 10px;
       height: 50px;
       width: 50px;
       border-radius: 50px;

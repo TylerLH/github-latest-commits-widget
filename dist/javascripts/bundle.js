@@ -18,7 +18,7 @@ branch = params.branch;
 title = document.querySelector('#widget-title');
 
 window.renderHistory = function(response) {
-  var commitTmpl, index, items, result, ul, _results;
+  var commitTmpl, data, index, items, li, result, ul, _results;
   items = response.data;
   commitTmpl = document.querySelector('#commit-tmpl').innerHTML;
   ul = document.querySelector('#commit-history');
@@ -26,27 +26,26 @@ window.renderHistory = function(response) {
   _results = [];
   for (index in items) {
     result = items[index];
-    _results.push((function(index, result) {
-      var data, li;
-      if (result.author != null) {
-        li = document.createElement('li');
-        li.className = 'clearfix';
-        data = {
-          result: result,
-          username: username,
-          repo: repo
-        };
-        li.innerHTML = _.template(commitTmpl, data);
-        return ul.appendChild(li);
-      }
-    })(index, result));
+    if (result.author != null) {
+      li = document.createElement('li');
+      li.className = 'clearfix';
+      data = {
+        result: result,
+        username: username,
+        repo: repo
+      };
+      li.innerHTML = _.template(commitTmpl, data);
+      _results.push(ul.appendChild(li));
+    } else {
+      _results.push(void 0);
+    }
   }
   return _results;
 };
 
-title.innerText = "Latest Commits to " + username + "/" + repo;
+title.innerHTML = "Latest Commits to <a href='//github.com/" + username + "/" + repo + "'>" + username + "/" + repo + "</a>";
 
-url = "https://api.github.com/repos/" + username + "/" + repo + "/commits?callback=renderHistory";
+url = "https://api.github.com/repos/" + username + "/" + repo + "/commits?per_page=" + limit + "&callback=renderHistory";
 
 if (params.branch != null) {
   url += "&sha=" + branch;

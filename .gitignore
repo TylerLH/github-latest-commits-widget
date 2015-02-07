@@ -15,4 +15,6 @@ build/Release
 # Dependency directory
 node_modules
 
+tmp
 .sass-cache
+.DS_Store

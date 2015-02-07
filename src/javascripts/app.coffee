@@ -1,5 +1,5 @@
 window.timeago = require 'timeago'
-params   = do require './params'
+params         = do require './params'
 window._       = require 'lodash'
 
 # config parameters
@@ -15,20 +15,19 @@ window.renderHistory = (response) ->
   ul = document.querySelector '#commit-history' # the ul element for results
   ul.children = []
   for index, result of items
-    do (index, result) ->
-      if result.author?
-        li = document.createElement 'li'
-        li.className = 'clearfix'
-        data =
-          result: result
-          username: username
-          repo: repo
-        li.innerHTML = _.template commitTmpl, data
-        ul.appendChild li
+    if result.author?
+      li = document.createElement 'li'
+      li.className = 'clearfix'
+      data =
+        result: result
+        username: username
+        repo: repo
+      li.innerHTML = _.template commitTmpl, data
+      ul.appendChild li
 
-title.innerText = "Latest Commits to #{username}/#{repo}"
+title.innerHTML = "Latest Commits to <a href='//github.com/#{username}/#{repo}'>#{username}/#{repo}</a>"
 
-url = "https://api.github.com/repos/#{username}/#{repo}/commits?callback=renderHistory"
+url = "https://api.github.com/repos/#{username}/#{repo}/commits?per_page=#{limit}&callback=renderHistory"
 if params.branch?
   url += "&sha=#{branch}"
 
