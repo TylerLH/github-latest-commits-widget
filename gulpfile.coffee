@@ -8,13 +8,13 @@
 
 
 gulp       = require 'gulp'
-plugins    = do require 'gulp-load-plugins'
+$          = do require 'gulp-load-plugins'
 browserify = require 'browserify'
 source     = require 'vinyl-source-stream'
 
 ## Test to determine dev/prod
 isProd = ->
-  plugins.util.env.type is 'production'
+  $.util.env.type is 'production'
 
 ## Set env-specific build directory
 buildDir = if isProd() then './dist' else './tmp'
@@ -24,14 +24,15 @@ gulp.task 'scripts', ->
   browserify './src/javascripts/app.coffee', extensions: ['.coffee']
   .bundle()
   .pipe source 'bundle.js'
+  .pipe $.if(isProd(), $.streamify($.uglify()))
   .pipe gulp.dest "./#{buildDir}/javascripts"
 
 
 ## Compile stylesheets
 gulp.task 'styles', ->
   gulp.src './src/stylesheets/screen.scss'
-  .pipe plugins.sass includePaths: ['./bower_components']
-  .pipe plugins.autoprefixer()
+  .pipe $.sass includePaths: ['./bower_components']
+  .pipe $.autoprefixer()
   .pipe gulp.dest "./#{buildDir}/stylesheets"
 
 
@@ -42,7 +43,7 @@ gulp.task 'index', ->
   sources = gulp.src ["#{buildDir}/javascripts/*.js", "#{buildDir}/stylesheets/*.css"], 
     read: false # We just need the paths, so this is faster
   target
-    .pipe plugins.inject sources
+    .pipe $.inject sources
     .pipe gulp.dest targetDest
 
 
@@ -53,7 +54,7 @@ gulp.task 'watch', ['default'], ->
   gulp.watch './src/index.html', ['index']
 
   gulp.src '.'
-  .pipe plugins.webserver
+  .pipe $.webserver
     livereload: true
     fallback: 'tmp/index.html'
     open: 'tmp/index.html/?username=twbs&repo=bootstrap'

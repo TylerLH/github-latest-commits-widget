@@ -8,8 +8,7 @@
   height: 0; }
 
 * {
-  -moz-box-sizing: border-box;
-       box-sizing: border-box; }
+  box-sizing: border-box; }
 
 .clearfix {
   display: inline-block; }
@@ -68,7 +67,6 @@ body {
     margin: 0.5em 0; }
 
 #latest-commits-header {
-  background-image: -webkit-linear-gradient(#f1f1f1, #e1e1e1);
   background-image: linear-gradient(#f1f1f1, #e1e1e1);
   border-bottom: 1px solid #CACACA;
   color: #52595d;
@@ -102,8 +100,7 @@ body {
     position: relative; }
     #latest-commits-widget ul#commit-history li .commit-author {
       font-size: 1.1em;
-      -webkit-transition: all ease-in-out 0.2s;
-              transition: all ease-in-out 0.2s; }
+      transition: all ease-in-out 0.2s; }
       #latest-commits-widget ul#commit-history li .commit-author:hover {
         color: #4183c4; }
     #latest-commits-widget ul#commit-history li .commit-message {
