@@ -63,7 +63,7 @@ Authors
 
 **Tyler Hughes**
 
-+ http://twitter.com/iamstyxxx
++ http://twitter.com/iampbt
 + http://github.com/tylerlh
 
 
