@@ -1,4 +1,4 @@
-@import "//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css";
+@import "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css";
 
 .clearfix:after {
   content: ".";
@@ -44,6 +44,7 @@
 }
 
 body {
+  color: #444;
   height: 100%;
   width: 100%;
   margin: 0;
@@ -102,11 +103,67 @@ body {
   }
 }
 
+.latest-commits-content {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.loading-indicator {
+  font-size: 1.1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(255,255,255,.9);
+  padding: 1em;
+  text-align: center;
+  width: 100%;
+  z-index: 999;
+}
+
+.spinner-enter {
+  opacity: 0.1;
+  transition: all linear 0.1s;
+}
+
+.spinner-enter.spinner-enter-active {
+  opacity: 1;
+}
+
+.spinner-leave {
+  opacity: 1;
+  transition: all linear 0.3s;
+}
+
+.spinner-leave.spinner-leave-active {
+  opacity: 0;
+}
+
 .latest-commits-widget ul.commit-history {
   flex: 1;
   padding-left: 0;
   margin: 0;
-  overflow-y: scroll;
+  overflow-y: auto;
+
+  .commit-enter {
+    opacity: 0.1;
+    transition: all linear 0.3s;
+  }
+
+  .commit-enter.commit-enter-active {
+    opacity: 1;
+  }
+
+  .commit-leave {
+    opacity: 1;
+    transition: all linear 0.3s;
+  }
+
+  .commit-leave.commit-leave-active {
+    opacity: 0;
+  }
+
   li {
     list-style-type: none;
     background-color: #f1f1f1;
@@ -162,4 +219,11 @@ body {
 
 .left {
   float: left;
+}
+
+.next-page {
+  font-size: 14px;
+  border-radius: 0;
+  padding: 0.5em;
+  width: 100%;
 }

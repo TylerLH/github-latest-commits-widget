@@ -2,6 +2,9 @@ params        = do require './params'
 React         = require 'react'
 LatestCommits = require './components/LatestCommits'
 
+# for dev tools
+window.React = React
+
 # config parameters
 username  = params.username
 repo      = params.repo

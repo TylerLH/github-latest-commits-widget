@@ -3,7 +3,7 @@
 ## Author: Tyler Hughes <iampbt@gmail.com>
 ## -------------------------------------------
 ## Run gulp watch for development
-## Run gulp --type production to build project
+## Run gulp --production to build project
 ##############################################
 
 
@@ -24,6 +24,7 @@ gulp.task 'scripts', ->
   .bundle()
   .pipe source 'bundle.js'
   .pipe $.if(isProd, $.streamify($.uglify()))
+  .pipe $.if(isProd, $.gzip())
   .pipe gulp.dest "./#{buildDir}/javascripts"
 
 
