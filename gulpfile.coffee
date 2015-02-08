@@ -13,18 +13,17 @@ browserify = require 'browserify'
 source     = require 'vinyl-source-stream'
 
 ## Test to determine dev/prod
-isProd = ->
-  $.util.env.type is 'production'
+isProd = $.util.env.production?
 
 ## Set env-specific build directory
-buildDir = if isProd() then './dist' else './tmp'
+buildDir = if isProd then './dist' else './tmp'
 
 ## Compile scripts
 gulp.task 'scripts', ->
   browserify './src/javascripts/app.coffee', extensions: ['.coffee']
   .bundle()
   .pipe source 'bundle.js'
-  .pipe $.if(isProd(), $.streamify($.uglify()))
+  .pipe $.if(isProd, $.streamify($.uglify()))
   .pipe gulp.dest "./#{buildDir}/javascripts"
 
 
@@ -39,7 +38,7 @@ gulp.task 'styles', ->
 ## Build & copy index.html
 gulp.task 'index', ->
   target  = gulp.src './src/index.html'
-  targetDest = if isProd() then '.' else './tmp'
+  targetDest = if isProd then '.' else './tmp'
   sources = gulp.src ["#{buildDir}/javascripts/*.js", "#{buildDir}/stylesheets/*.css"], 
     read: false # We just need the paths, so this is faster
   target
