@@ -11,10 +11,10 @@ Check out a demo of the widget in action @ http://tylerlh.github.com/github-late
 Usage
 -----
 
-This widget is hosted via GitHub Pages, meaning all you need to do is include an iframe in your html and you're good to go. There are only 3 params at the moment: username, repo, and limit.
+This widget is hosted via GitHub Pages, meaning all you need to do is include an iframe in your html and you're good to go. There are 4 supported params at the moment: username, repo, branch, and limit.
 
 ``` html
-<iframe src="http://tylerlh.github.com/github-latest-commits-widget/?username=USERNAME&repo=REPO&limit=LIMIT" frameborder="0"></iframe>
+<iframe src="http://tylerlh.github.com/github-latest-commits-widget/?username=USERNAME&repo=REPO&branch=BRANCH&limit=LIMIT" frameborder="0"></iframe>
 ```
 
 ### Parameters
@@ -24,6 +24,9 @@ GitHub username that owns the repo<br>
 
 `repo`<br>
 GitHub repository to check for activity
+
+`branch`<br>
+Repository branch to use instead of master (default: master)
 
 `limit`<br>
 The maximum number of results to list (default: 10)
