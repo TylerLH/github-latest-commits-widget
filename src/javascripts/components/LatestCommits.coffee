@@ -6,6 +6,16 @@ Commit  = require './Commit'
 module.exports = React.createClass
   displayName: 'LatestCommits'
 
+  propTypes:
+    username: React.PropTypes.string.isRequired
+    repo: React.PropTypes.string.isRequired
+    branch: React.PropTypes.string
+    limit: React.PropTypes.number
+
+  getDefaultProps: ->
+    props =
+      limit: 10
+
   getInitialState: ->
     state =
       error: null
