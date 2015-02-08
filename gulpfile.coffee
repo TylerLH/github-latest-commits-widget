@@ -48,7 +48,7 @@ gulp.task 'index', ->
 
 ## Watch & rebuild files / serve dev preview
 gulp.task 'watch', ['default'], ->
-  gulp.watch('./src/javascripts/*.coffee', ['scripts'])
+  gulp.watch('./src/javascripts/**/*.coffee', ['scripts'])
   gulp.watch('./src/stylesheets/*.scss', ['styles'])
   gulp.watch './src/index.html', ['index']
 

@@ -55,7 +55,7 @@ body {
   line-height: 1.5rem;
 }
 
-#latest-commits-widget {
+.latest-commits-widget {
   border: 1px solid #cacaca;
   width: 100%;
   height: 100%;
@@ -78,7 +78,7 @@ body {
   }
 }
 
-#latest-commits-header {
+.latest-commits-header {
   background-image: linear-gradient(#f1f1f1, #e1e1e1);
   border-bottom: 1px solid #CACACA;
   color: #52595d;
@@ -90,6 +90,7 @@ body {
   font-weight: bold;
   h4 {
     margin: 3px 0;
+    padding-left: 5px;
     display: inline-block;
 
     a {
@@ -101,7 +102,7 @@ body {
   }
 }
 
-#latest-commits-widget ul#commit-history {
+.latest-commits-widget ul.commit-history {
   flex: 1;
   padding-left: 0;
   margin: 0;

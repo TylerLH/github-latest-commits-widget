@@ -5,35 +5,7 @@
   </head>
   <body>
   
-  <script type="text/template" id="commit-tmpl">
-
-    <div class="left">
-      <a href="https://github.com/${result.author.login}" title="${result.author.login} on Github">
-        <img class="commit-avatar vertical-center" src="${result.author.avatar_url}">
-      </a>
-    </div>
-    <div class="commit-author-info left">
-        <a href="https://github.com/${result.author.login}">
-          <b class="commit-author">${result.author.login}</b>
-        </a>
-        <br>
-        <b class="commit-date">${timeago(result.commit.committer.date)}</b><br>
-        <p><a class="commit-message" href="https://github.com/${username}/${repo}/commit/${result.sha}" target="_blank"><%- result.commit.message %></a></p>
-        <i class="commit-sha">SHA: ${result.sha}</i>
-    </div>
-
-  </script>
-
-    <div id="latest-commits-widget">
-
-        <div id="latest-commits-header">
-          <i class="fa fa-github gh-icon"></i>
-          <h4 id="widget-title">Latest Commits</h4>
-        </div>
-
-        <ul id="commit-history"></ul>
-
-    </div>
+  <div id="app"></div>
 
     <!-- inject:js -->
     <!-- endinject -->

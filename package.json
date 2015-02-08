@@ -19,12 +19,12 @@
   },
   "browserify": {
     "transform": [
-      "coffeeify",
-      "debowerify"
+      "coffee-reactify"
     ]
   },
   "devDependencies": {
     "browserify": "^5.12.0",
+    "coffee-reactify": "^2.1.0",
     "coffeeify": "^0.7.0",
     "debowerify": "^0.8.1",
     "gulp": "^3.6.0",
@@ -40,10 +40,12 @@
     "gulp-util": "~2.2.14",
     "gulp-webserver": "^0.8.1",
     "lodash": "^2.4.1",
+    "react": "^0.12.2",
     "timeago": "^0.1.0",
     "vinyl-source-stream": "^1.0.0"
   },
   "dependencies": {
-    "coffee-script": "~1.7.1"
+    "coffee-script": "~1.7.1",
+    "superagent": "^0.21.0"
   }
 }
