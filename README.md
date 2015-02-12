@@ -18,19 +18,19 @@ This widget is hosted via GitHub Pages, meaning all you need to do is include an
   allowtransparency="true" frameborder="0" scrolling="no" width="502px" height="252px"></iframe>
 ```
 
-### Required Params
+### Parameters
 
 `username`<br>
-GitHub username that owns the repo<br>
+GitHub username that owns the repo (required)<br>
 
 `repo`<br>
-GitHub repository to check for activity
+GitHub repository to check for activity (required)
 
 `branch`<br>
-Branch to use instead of master
+Branch to pull commits from (default: master)
 
 `limit`<br>
-The maximum number of results to list
+The maximum number of results to list (default: 10)
 
 
 Things to Note
