@@ -194,6 +194,7 @@ body {
     .commit-date {
       color: #999;
       font-size: .8em;
+      font-weight: bold;
     }
     .commit-author-info a {
       color: #444;
@@ -222,8 +223,14 @@ body {
 }
 
 .next-page {
+  background-color: white;
   font-size: 14px;
-  border-radius: 0;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 3px;
   padding: 0.5em;
   width: 100%;
+
+  &:hover {
+    background-color: #eee;
+  }
 }

@@ -1,5 +1,5 @@
-React   = require 'react'
-timeago = require 'timeago'
+React   = require 'react/addons'
+TimeAgo = require 'react-smart-time-ago'
 _       = require 'lodash'
 
 module.exports = React.createClass
@@ -7,7 +7,6 @@ module.exports = React.createClass
   render: ->
 
     authorLogin = @props.data.author.login
-    timestamp = timeago @props.data.commit.committer.date
 
     <li className="commit clearfix">
       <div className="left">
@@ -20,7 +19,7 @@ module.exports = React.createClass
             <b className="commit-author">{authorLogin}</b>
           </a>
           <br/>
-          <b className="commit-date">{timestamp}</b><br/>
+          <TimeAgo value={@props.data.commit.committer.date} className="commit-date"/><br/>
           <p>
             <a className="commit-message" href={@props.data.html_url} target="_blank">
               {@props.data.commit.message}

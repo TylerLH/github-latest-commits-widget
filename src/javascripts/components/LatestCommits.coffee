@@ -36,9 +36,12 @@ module.exports = React.createClass
       .get url
       .query query
       .end (err, response) =>
+        @setState loading: false
         return @setState error: err if err?
+        if response.status is 403
+          return @setState error: {message: "API limit exceeded. Please try again later."}
         commits = @state.commits.concat response.body
-        @setState commits: commits, loading: false
+        @setState commits: commits
 
   loadNextPage: ->
     @setState currentPage: @state.currentPage+1
@@ -47,16 +50,28 @@ module.exports = React.createClass
   componentDidMount: ->
     @loadCommits()
 
+  handleScroll: (e) ->
+    console.log arguments
+    console.log [e.target.scrollTop, e.target.offsetHeight]
+
+  logItemPosition: (e) ->
+    console.log {top: e.target.offsetTop, left: e.target.offse}
+
   render: ->
     loadingIndicator =
       <div className="loading-indicator">
         <span><i className="fa fa-circle-o-notch fa-spin"></i> Loading commits...</span>
       </div>
 
-    commits = _.map _.filter(@state.commits, 'author'), (commit, i) =>
-      <Commit {...@props} key={i} data={commit}/>
+    errorMessage =
+      <div className="error-message">
+        <strong>{@state.error?.message}</strong>
+      </div>
 
-    nextPageBtnText = if @state.loading then "Loading..." else "Load more commits"
+    commits = _.map _.filter(@state.commits, 'author'), (commit, i) =>
+      <Commit onClick={@logItemPosition} {...@props} key={i} data={commit}/>
+
+    nextPageBtnText = if @state.loading then "Loading..." else "Show More"
 
     username = @props.username
     repo = @props.repo
@@ -65,13 +80,16 @@ module.exports = React.createClass
       <div className="latest-commits-header">
         <i className="fa fa-github gh-icon"></i>
         <h4 className="widget-title">
-          Latest Commits to <a href={"//github.com/#{username}/#{repo}"}>{username}/{repo}</a>
+          Latest Commits for <a href={"//github.com/#{username}/#{repo}"}>{username}/{repo}</a>
         </h4>
       </div>
       <div className="latest-commits-content">
         <CSSTransitionGroup transitionName="spinner">{loadingIndicator if @state.loading}</CSSTransitionGroup>
-        <ul className="commit-history">
-          <CSSTransitionGroup transitionName="commit">{commits}</CSSTransitionGroup>
+        <ul ref="commits" onScroll={@handleScroll} className="commit-history">
+          {errorMessage if @state.error?}
+          <CSSTransitionGroup transitionName="commit">
+            {commits}
+          </CSSTransitionGroup>
           <li><button className="next-page" onClick={@loadNextPage}><i className="fa fa-plus"></i> {nextPageBtnText}</button></li>
         </ul>
       </div>

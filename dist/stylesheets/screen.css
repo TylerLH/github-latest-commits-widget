@@ -1,4 +1,4 @@
-@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css);
+@import url(//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css);
 .clearfix:after {
   content: ".";
   display: block;
@@ -36,6 +36,7 @@
           transform: translateY(50%); }
 
 body {
+  color: #444;
   height: 100%;
   width: 100%;
   margin: 0;
@@ -85,13 +86,60 @@ body {
       .latest-commits-header h4 a:hover {
         color: #4183c4; }
 
+.latest-commits-content {
+  position: relative;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
+.loading-indicator {
+  font-size: 1.1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1em;
+  text-align: center;
+  width: 100%;
+  z-index: 999; }
+
+.spinner-enter {
+  opacity: 0.1;
+  transition: all linear 0.1s; }
+
+.spinner-enter.spinner-enter-active {
+  opacity: 1; }
+
+.spinner-leave {
+  opacity: 1;
+  transition: all linear 0.3s; }
+
+.spinner-leave.spinner-leave-active {
+  opacity: 0; }
+
 .latest-commits-widget ul.commit-history {
   -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
   padding-left: 0;
   margin: 0;
-  overflow-y: scroll; }
+  overflow-y: auto; }
+  .latest-commits-widget ul.commit-history .commit-enter {
+    opacity: 0.1;
+    transition: all linear 0.3s; }
+  .latest-commits-widget ul.commit-history .commit-enter.commit-enter-active {
+    opacity: 1; }
+  .latest-commits-widget ul.commit-history .commit-leave {
+    opacity: 1;
+    transition: all linear 0.3s; }
+  .latest-commits-widget ul.commit-history .commit-leave.commit-leave-active {
+    opacity: 0; }
   .latest-commits-widget ul.commit-history li {
     list-style-type: none;
     background-color: #f1f1f1;
@@ -116,7 +164,8 @@ body {
       font-size: 0.8em; }
     .latest-commits-widget ul.commit-history li .commit-date {
       color: #999;
-      font-size: 0.8em; }
+      font-size: 0.8em;
+      font-weight: bold; }
     .latest-commits-widget ul.commit-history li .commit-author-info a {
       color: #444;
       text-decoration: none; }
@@ -134,3 +183,13 @@ body {
 
 .left {
   float: left; }
+
+.next-page {
+  background-color: white;
+  font-size: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  padding: 0.5em;
+  width: 100%; }
+  .next-page:hover {
+    background-color: #eee; }

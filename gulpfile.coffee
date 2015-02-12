@@ -34,6 +34,7 @@ gulp.task 'styles', ->
   .pipe $.sass includePaths: ['./bower_components']
   .pipe $.autoprefixer()
   .pipe gulp.dest "./#{buildDir}/stylesheets"
+  .pipe $.filesize()
 
 
 ## Build & copy index.html
