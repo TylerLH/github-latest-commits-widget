@@ -1,0 +1,195 @@
+@import url(//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css);
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0; }
+
+* {
+  box-sizing: border-box; }
+
+.clearfix {
+  display: inline-block; }
+  .clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0; }
+
+/* start commented backslash hack \*/
+* html .clearfix {
+  height: 1%; }
+
+.clearfix {
+  display: block; }
+
+/* close commented backslash hack */
+.vertical-center {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(50%);
+      -ms-transform: translateY(50%);
+          transform: translateY(50%); }
+
+body {
+  color: #444;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0; }
+
+.gh-icon {
+  font-size: 1.5rem;
+  line-height: 1.5rem; }
+
+.latest-commits-widget {
+  border: 1px solid #cacaca;
+  width: 100%;
+  height: 100%;
+  font: 14px "Helvetica Neue", helvetica, arial, freesans, clean, sans-serif;
+  background: #dedede;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  .latest-commits-widget a {
+    color: #4183c4; }
+    .latest-commits-widget a:visited {
+      color: #4183c4; }
+    .latest-commits-widget a:hover {
+      text-decoration: underline; }
+  .latest-commits-widget p {
+    margin: 0.5em 0; }
+
+.latest-commits-header {
+  background-image: linear-gradient(#f1f1f1, #e1e1e1);
+  border-bottom: 1px solid #CACACA;
+  color: #52595d;
+  height: 40px;
+  margin: 0;
+  padding: 5px 0 0 5px;
+  font-size: 1.3em;
+  line-height: 1.3em;
+  font-weight: bold; }
+  .latest-commits-header h4 {
+    margin: 3px 0;
+    padding-left: 5px;
+    display: inline-block; }
+    .latest-commits-header h4 a {
+      color: #52595d; }
+      .latest-commits-header h4 a:hover {
+        color: #4183c4; }
+
+.latest-commits-content {
+  position: relative;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
+.loading-indicator {
+  font-size: 1.1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1em;
+  text-align: center;
+  width: 100%;
+  z-index: 999; }
+
+.spinner-enter {
+  opacity: 0.1;
+  transition: all linear 0.1s; }
+
+.spinner-enter.spinner-enter-active {
+  opacity: 1; }
+
+.spinner-leave {
+  opacity: 1;
+  transition: all linear 0.3s; }
+
+.spinner-leave.spinner-leave-active {
+  opacity: 0; }
+
+.latest-commits-widget ul.commit-history {
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding-left: 0;
+  margin: 0;
+  overflow-y: auto; }
+  .latest-commits-widget ul.commit-history .commit-enter {
+    opacity: 0.1;
+    transition: all linear 0.3s; }
+  .latest-commits-widget ul.commit-history .commit-enter.commit-enter-active {
+    opacity: 1; }
+  .latest-commits-widget ul.commit-history .commit-leave {
+    opacity: 1;
+    transition: all linear 0.3s; }
+  .latest-commits-widget ul.commit-history .commit-leave.commit-leave-active {
+    opacity: 0; }
+  .latest-commits-widget ul.commit-history li {
+    list-style-type: none;
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #DEDEDE;
+    padding: 5px;
+    width: 100%;
+    position: relative; }
+    .latest-commits-widget ul.commit-history li .commit-author {
+      font-size: 1.1em;
+      transition: all ease-in-out 0.2s; }
+      .latest-commits-widget ul.commit-history li .commit-author:hover {
+        color: #4183c4; }
+    .latest-commits-widget ul.commit-history li .commit-message {
+      font-size: 0.9em;
+      text-decoration: none;
+      line-height: 1.2em;
+      font-weight: bold; }
+      .latest-commits-widget ul.commit-history li .commit-message:hover {
+        text-decoration: underline; }
+    .latest-commits-widget ul.commit-history li .commit-sha {
+      color: #999;
+      font-size: 0.8em; }
+    .latest-commits-widget ul.commit-history li .commit-date {
+      color: #999;
+      font-size: 0.8em;
+      font-weight: bold; }
+    .latest-commits-widget ul.commit-history li .commit-author-info a {
+      color: #444;
+      text-decoration: none; }
+      .latest-commits-widget ul.commit-history li .commit-author-info a:visited {
+        color: #444;
+        text-decoration: none; }
+    .latest-commits-widget ul.commit-history li .commit-avatar {
+      height: 50px;
+      width: 50px;
+      border-radius: 50px;
+      border: 1px solid #dedede; }
+    .latest-commits-widget ul.commit-history li .commit-author-info {
+      padding: 10px;
+      width: 85%; }
+
+.left {
+  float: left; }
+
+.next-page {
+  background-color: white;
+  font-size: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  padding: 0.5em;
+  width: 100%; }
+  .next-page:hover {
+    background-color: #eee; }
