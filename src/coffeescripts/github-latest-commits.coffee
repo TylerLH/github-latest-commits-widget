@@ -18,6 +18,9 @@ $.extend
   getUrlVar: (name) ->
     $.getUrlVars()[name]
 
+formatMessage = (msg) ->
+    msg.replace(/\n/g, "<br />");
+
 $ ->
   params = $.getUrlVars()
   # config parameters
@@ -44,7 +47,7 @@ $ ->
                     <br />
                     <b class="commit-date">#{$.timeago(result.commit.committer.date)}</b><br /><i class="commit-sha">SHA: #{result.sha}</i>
                     <br />
-                    <a class="commit-message" href="https://github.com/#{username}/#{repo}/commit/#{result.sha}" target="_blank">#{result.commit.message}</a>
+                    <a class="commit-message" href="https://github.com/#{username}/#{repo}/commit/#{result.sha}" target="_blank">#{formatMessage(result.commit.message)}</a>
                 </div>
               </li>
           """)
@@ -63,3 +66,4 @@ $ ->
       type: "get"
   ).success (response) ->
       callback(response)
+
