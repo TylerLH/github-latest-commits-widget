@@ -32,6 +32,9 @@ Branch to pull commits from (default: master)
 `limit`<br>
 The maximum number of results to list (default: 10)
 
+`author`<br>
+GitHub login or email address by which to filter by commit author (optional)
+
 
 Things to Note
 -----------

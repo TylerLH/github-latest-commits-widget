@@ -25,6 +25,7 @@ $ ->
   repo = params.repo
   limit = params.limit
   branch = params.branch
+  author = params.author
   container = $('#latest-commits-widget')
 
   callback = (response) ->
@@ -48,12 +49,18 @@ $ ->
                 </div>
               </li>
           """)
-  
-  container.find('h4').text("Latest Commits to #{username}/#{repo}")
 
+
+  title = "Latest Commits to #{username}/#{repo}"
   url = "https://api.github.com/repos/#{username}/#{repo}/commits?callback=callback"
+
   if params.branch?
     url += "&sha=#{branch}"
+  if params.author?
+    url += "&author=#{author}"
+    title += " by #{author}"
+
+  container.find('h4').text(title)
 
   $.ajax(
       url
